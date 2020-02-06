@@ -13,7 +13,7 @@ namespace AccountingWebTests.CheckEnvironment
     // 3. SpecFlow.Tools.MsBuild.Generation
 
     [Binding]
-    public class CheckSpecflowSteps:Steps
+    public class CheckSpecflowSteps : Steps
     {
         private Calculator _calculator;
 

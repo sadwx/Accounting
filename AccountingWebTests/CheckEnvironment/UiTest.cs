@@ -23,12 +23,6 @@ namespace AccountingWebTests.CheckEnvironment
                         .UseNUnitAggregateAssertionStrategy().Build();
         }
 
-        [Test]
-        public void Method()
-        {
-            Go.ToUrl("https://tw.yahoo.com");
-        }
-
         [TearDown]
         public void TearDown()
         {
