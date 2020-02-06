@@ -7,6 +7,11 @@ using static TechTalk.SpecFlow.ScenarioContext;
 
 namespace AccountingWebTests.CheckEnvironment
 {
+    //you need add nuget packages:
+    // 1. SpecFlow
+    // 2. SpecFlow.NUnit
+    // 3. SpecFlow.Tools.MsBuild.Generation
+
     [Binding]
     public class CheckSpecflowSteps:Steps
     {
