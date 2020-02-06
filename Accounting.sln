@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingWeb", "AccountingWeb\AccountingWeb.csproj", "{A8D9D242-2F33-412C-8300-6EDD1AB8EA36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingWebTests", "AccountingWebTests\AccountingWebTests.csproj", "{A25CC926-6A0F-4B9F-BFA1-13C5E6DE6469}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingWebTests", "AccountingWebTests\AccountingWebTests.csproj", "{428FCAD3-C5DF-4B87-9041-074CAB2C1D2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{A8D9D242-2F33-412C-8300-6EDD1AB8EA36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8D9D242-2F33-412C-8300-6EDD1AB8EA36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8D9D242-2F33-412C-8300-6EDD1AB8EA36}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A25CC926-6A0F-4B9F-BFA1-13C5E6DE6469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A25CC926-6A0F-4B9F-BFA1-13C5E6DE6469}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A25CC926-6A0F-4B9F-BFA1-13C5E6DE6469}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A25CC926-6A0F-4B9F-BFA1-13C5E6DE6469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{428FCAD3-C5DF-4B87-9041-074CAB2C1D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{428FCAD3-C5DF-4B87-9041-074CAB2C1D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{428FCAD3-C5DF-4B87-9041-074CAB2C1D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{428FCAD3-C5DF-4B87-9041-074CAB2C1D2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
