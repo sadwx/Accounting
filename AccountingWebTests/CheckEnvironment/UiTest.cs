@@ -1,11 +1,14 @@
 ﻿using Atata;
 using NUnit.Framework;
 
-namespace AccountingWebTests
+namespace AccountingWebTests.CheckEnvironment
 {
     [TestFixture]
-    public class UITestFixture
+    public class UiTest
     {
+        //if you cannot run web test, please check if you use the Chrome version 80 browser.
+        //if your version is less than 80, you may need to downgrade nuget package "Selenium.WebDriver.ChromeDriver" version to the appropriate version
+
         [SetUp]
         public void SetUp()
         {
@@ -13,7 +16,7 @@ namespace AccountingWebTests
             AtataContext.Configure()
                         .UseChrome()
                         //    WithArguments("start-maximized").
-                        //UseBaseUrl("http://automationpractice.com/index.php")
+                        //.UseBaseUrl("http://automationpractice.com/index.php")
                         .UseCulture("en-us").UseNUnitTestName()
                         .AddNUnitTestContextLogging().LogNUnitError()
                         .UseAssertionExceptionType<NUnit.Framework.AssertionException>()
@@ -30,6 +33,12 @@ namespace AccountingWebTests
         public void TearDown()
         {
             AtataContext.Current?.CleanUp();
+        }
+
+        [Test]
+        public void go_to_joey_blog()
+        {
+            Go.ToUrl("https://dotblogs.com.tw/hatelove/1");
         }
     }
 }
