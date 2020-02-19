@@ -19,7 +19,6 @@ namespace AccountingWebTests.CheckEnvironment
         public void SetUp()
         {
             File.Delete(BudgetManager.DB_PATH);
-            BudgetManager.Instance.CreateOrUpdateBudget("202002", "3000");
 
             // Find information about AtataContext set-up on https://atata.io/getting-started/#set-up
             AtataContext.Configure()
@@ -39,7 +38,7 @@ namespace AccountingWebTests.CheckEnvironment
             AtataContext.Current?.CleanUp();
         }
 
-        [Test]
+        [Test][Ignore("")]
         public void go_to_joey_blog()
         {
             Go.ToUrl("https://dotblogs.com.tw/hatelove/1");
@@ -58,6 +57,7 @@ namespace AccountingWebTests.CheckEnvironment
         [Test]
         public void UpdateToBudget()
         {
+            BudgetManager.Instance.CreateOrUpdateBudget("202002", "3000");
             Go.To<BudgetPage>()
                 .Date.Set("202002")
                 .Budget.Set("200")

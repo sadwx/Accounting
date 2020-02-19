@@ -18,7 +18,6 @@ namespace AccountingWebTests.TestBudget
         public void setup()
         {
             File.Delete(BudgetManager.DB_PATH);
-            BudgetManager.Instance.CreateOrUpdateBudget("202002", "3000");
         }
 
         [Test]
@@ -31,6 +30,7 @@ namespace AccountingWebTests.TestBudget
         [Test]
         public void TestUpdateBudget()
         {
+            BudgetManager.Instance.CreateOrUpdateBudget("202002", "3000");
             Assert.AreEqual("Update", BudgetManager.Instance.CreateOrUpdateBudget("202002", "500"));
             Assert.True(BudgetManager.Instance.Budgets.Exists(b => b.YearMonth == "202002" && b.Amount == "500"));
         }
