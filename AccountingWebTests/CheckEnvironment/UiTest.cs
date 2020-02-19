@@ -1,4 +1,10 @@
-﻿using Atata;
+﻿using System.Data;
+using System.IO;
+using AccountingWeb;
+using AccountingWeb.Controllers;
+using AccountingWebTests.DataModels;
+using AccountingWebTests.PageObjects;
+using Atata;
 using NUnit.Framework;
 
 namespace AccountingWebTests.CheckEnvironment
@@ -12,11 +18,15 @@ namespace AccountingWebTests.CheckEnvironment
         [SetUp]
         public void SetUp()
         {
+            File.Delete(BudgetManager.DB_PATH);
+            BudgetManager.Instance.CreateOrUpdateBudget("202002", "3000");
+
             // Find information about AtataContext set-up on https://atata.io/getting-started/#set-up
             AtataContext.Configure()
                         .UseChrome()
                         //    WithArguments("start-maximized").
                         //.UseBaseUrl("http://automationpractice.com/index.php")
+                        .UseBaseUrl("http://localhost:50564")
                         .UseCulture("en-us").UseNUnitTestName()
                         .AddNUnitTestContextLogging().LogNUnitError()
                         .UseAssertionExceptionType<NUnit.Framework.AssertionException>()
@@ -33,6 +43,26 @@ namespace AccountingWebTests.CheckEnvironment
         public void go_to_joey_blog()
         {
             Go.ToUrl("https://dotblogs.com.tw/hatelove/1");
+        }
+
+        [Test]
+        public void GoToBudget()
+        {
+            Go.To<BudgetPage>()
+                .Date.Set("201901")
+                .Budget.Set("1000")
+                .Submit.ClickAndGo<ResultPage>()
+                .Message.Should.StartWith("Create");
+        }
+
+        [Test]
+        public void UpdateToBudget()
+        {
+            Go.To<BudgetPage>()
+                .Date.Set("202002")
+                .Budget.Set("200")
+                .Submit.ClickAndGo<ResultPage>()
+                .Message.Should.StartWith("Update");
         }
     }
 }
